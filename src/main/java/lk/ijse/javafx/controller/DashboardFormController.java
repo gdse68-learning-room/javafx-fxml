@@ -6,10 +6,25 @@ package lk.ijse.javafx.controller;
 */
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class DashboardFormController {
-    public void btnCustomerOnAction(ActionEvent actionEvent) {
-        System.out.println("customer button pressed!");
+    public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/customer_form.fxml"));
+
+        Scene scene = new Scene(rootNode);
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Customer Form");
+
+        stage.show();
     }
 
     public void btnItemOnAction(ActionEvent actionEvent) {

@@ -7,7 +7,6 @@ package lk.ijse.javafx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -20,7 +19,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //load the scene graph to the start method
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
 
         //create a new Scene
         Scene scene = new Scene(rootNode);

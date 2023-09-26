@@ -2,13 +2,14 @@ package lk.ijse.javafx;
 
 /*
     @author DanujaV
-    @created 9/12/23 - 3:33 PM   
+    @created 9/26/23 - 10:10 AM   
 */
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Launcher extends Application {
@@ -18,14 +19,20 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/main_form.fxml"));
+        //load the scene graph to the start method
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard.fxml"));
 
+        //create a new Scene
         Scene scene = new Scene(rootNode);
 
-        stage.setTitle("Main Form");
-        stage.centerOnScreen();
+        //set scene to the primary stage
         stage.setScene(scene);
 
+        //set title and get center on screen stage
+        stage.setTitle("Dashboard");
+        stage.centerOnScreen();
+
+        //show stage to the crowd
         stage.show();
     }
 }
